@@ -13,7 +13,7 @@ services:
       DB_HOST: db
       DB_NAME: ${DB_NAME:-expedientes_aduanal}
       DB_USER: ${DB_USER:-expedientes_app}
-      DB_PASS: ${DB_PASSWORD:-CAMBIAR_ESTA_CLAVE}
+      DB_PASS: ${DB_PASSWORD:-p12345}
       APP_NAME: ${APP_NAME:-Expedientes Aduanales}
       BASE_URL: ${BASE_URL:-}
       STORAGE_PATH: /var/www/html/storage
@@ -30,8 +30,8 @@ services:
     environment:
       MYSQL_DATABASE: ${DB_NAME:-expedientes_aduanal}
       MYSQL_USER: ${DB_USER:-expedientes_app}
-      MYSQL_PASSWORD: ${DB_PASSWORD:-CAMBIAR_ESTA_CLAVE}
-      MYSQL_ROOT_PASSWORD: ${DB_ROOT_PASSWORD:-CAMBIAR_CLAVE_ROOT}
+      MYSQL_PASSWORD: ${DB_PASSWORD:-p12345}
+      MYSQL_ROOT_PASSWORD: ${DB_ROOT_PASSWORD:-p12345$}
     volumes:
       - mysql_data:/var/lib/mysql
       - ./database/schema.sql:/docker-entrypoint-initdb.d/01-schema.sql:ro
